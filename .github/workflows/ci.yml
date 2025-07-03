@@ -26,9 +26,13 @@ jobs:
         run: |
           npx cypress run --reporter mochawesome --reporter-options reportDir=mochawesome-report,overwrite=false,html=false,json=true
 
-      - name: Merge and generate single Mochawesome HTML report
+      - name: Merge JSONs into one
         run: |
-          npx mochawesome-merge mochawesome-report/*.json | npx mochawesome-report-generator --inline --reportDir mochawesome-report
+          npx mochawesome-merge mochawesome-report/*.json > mochawesome-report/output.json
+
+      - name: Generate Mochawesome HTML report
+        run: |
+          npx mochawesome-report-generator mochawesome-report/output.json --inline --reportDir mochawesome-report
 
       - name: Upload Mochawesome report HTML
         uses: actions/upload-artifact@v4
