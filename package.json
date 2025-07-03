@@ -1,0 +1,19 @@
+{
+  "name": "steam-store-cypress-tests",
+  "version": "1.0.0",
+  "description": "Automated tests for Steam store using Cypress",
+  "scripts": {
+    "headless": "cypress run",
+    "open": "cypress open",
+    "lint": "eslint .",
+    "report": "cypress run --reporter mochawesome"
+  },
+  "devDependencies": {
+    "cypress": "^13.0.0",
+    "eslint": "^8.0.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-cypress": "^2.12.1",
+    "mochawesome": "^7.1.3",
+    "prettier": "^3.0.0"
+  }
+}
