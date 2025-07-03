@@ -24,7 +24,7 @@ jobs:
 
       - name: Run Cypress tests and generate JSON reports
         run: |
-          npm run headless --reporter mochawesome --reporter-options reportDir=mochawesome-report,overwrite=false,html=false,json=true
+          npx cypress run --reporter mochawesome --reporter-options reportDir=mochawesome-report,overwrite=false,html=false,json=true
 
       - name: Merge and generate single Mochawesome HTML report
         run: |
